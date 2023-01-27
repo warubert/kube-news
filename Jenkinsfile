@@ -18,6 +18,7 @@ pipeline {
                         docker.image(dockerapp).inside {
                             sh 'make test'
                         }
+                    }
                     dockerapp.push('latest')
                     dockerapp.push("${env.BUILD_ID}")
                 }
